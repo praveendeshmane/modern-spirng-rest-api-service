@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:15
+    container_name: modern-rest-postgres
+    environment:
+      POSTGRES_DB: moderndb
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+    ports:
+      - "55432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:

@@ -1,0 +1,6 @@
+com\example\modernrest\integration\UserCrudSystemTest.class
+com\example\modernrest\unit\UserMapperTest.class
+com\example\modernrest\integration\UserControllerIntegrationTest.class
+com\example\modernrest\unit\UserServiceTest.class
+com\example\modernrest\web\UserControllerWebMvcTest.class
+com\example\modernrest\repository\UserRepositoryDataJpaTest.class

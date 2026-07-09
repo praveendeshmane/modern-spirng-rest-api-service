@@ -1,0 +1,60 @@
+name: Deploy GCP Cloud Run
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ["main", "master"]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Authenticate to Google Cloud (OIDC)
+        uses: google-github-actions/auth@v2
+        with:
+          workload_identity_provider: ${{ secrets.GCP_WORKLOAD_IDENTITY_PROVIDER }}
+          service_account: ${{ secrets.GCP_SERVICE_ACCOUNT }}
+
+      - name: Setup gcloud
+        uses: google-github-actions/setup-gcloud@v2
+
+      - name: Configure Docker auth for Artifact Registry
+        run: gcloud auth configure-docker ${{ secrets.GCP_REGION }}-docker.pkg.dev --quiet
+
+      - name: Build and push image
+        env:
+          REGION: ${{ secrets.GCP_REGION }}
+          PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
+          REPOSITORY: ${{ secrets.GCP_ARTIFACT_REPO }}
+          IMAGE: modern-rest-service
+          TAG: ${{ github.sha }}
+        run: |
+          ./mvnw -B -DskipTests package
+          docker build -t $REGION-docker.pkg.dev/$PROJECT_ID/$REPOSITORY/$IMAGE:$TAG .
+          docker push $REGION-docker.pkg.dev/$PROJECT_ID/$REPOSITORY/$IMAGE:$TAG
+
+      - name: Deploy to Cloud Run
+        env:
+          REGION: ${{ secrets.GCP_REGION }}
+          PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
+          REPOSITORY: ${{ secrets.GCP_ARTIFACT_REPO }}
+          IMAGE: modern-rest-service
+          TAG: ${{ github.sha }}
+          SERVICE: ${{ secrets.CLOUD_RUN_SERVICE }}
+          DB_USERNAME_SECRET: ${{ secrets.GCP_DB_USERNAME_SECRET_NAME }}
+          DB_PASSWORD_SECRET: ${{ secrets.GCP_DB_PASSWORD_SECRET_NAME }}
+          APP_JWT_SECRET: ${{ secrets.GCP_APP_JWT_SECRET_NAME }}
+        run: |
+          gcloud run deploy $SERVICE \
+            --image $REGION-docker.pkg.dev/$PROJECT_ID/$REPOSITORY/$IMAGE:$TAG \
+            --region $REGION \
+            --platform managed \
+            --allow-unauthenticated \
+            --set-secrets DB_USERNAME=$DB_USERNAME_SECRET:latest,DB_PASSWORD=$DB_PASSWORD_SECRET:latest,APP_JWT_SECRET=$APP_JWT_SECRET:latest

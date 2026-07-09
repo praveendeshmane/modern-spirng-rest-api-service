@@ -1,0 +1,39 @@
+{
+  "family": "modern-rest-service-task",
+  "networkMode": "awsvpc",
+  "requiresCompatibilities": ["FARGATE"],
+  "cpu": "512",
+  "memory": "1024",
+  "executionRoleArn": "arn:aws:iam::<ACCOUNT_ID>:role/ecsTaskExecutionRole",
+  "taskRoleArn": "arn:aws:iam::<ACCOUNT_ID>:role/ecsTaskRole",
+  "containerDefinitions": [
+    {
+      "name": "modern-rest-service",
+      "image": "public.ecr.aws/docker/library/nginx:latest",
+      "essential": true,
+      "portMappings": [
+        {
+          "containerPort": 8080,
+          "hostPort": 8080,
+          "protocol": "tcp"
+        }
+      ],
+      "environment": [
+        { "name": "SPRING_PROFILES_ACTIVE", "value": "prod" }
+      ],
+      "secrets": [
+        { "name": "DB_USERNAME", "valueFrom": "__DB_USERNAME_SECRET_ARN__" },
+        { "name": "DB_PASSWORD", "valueFrom": "__DB_PASSWORD_SECRET_ARN__" },
+        { "name": "APP_JWT_SECRET", "valueFrom": "__APP_JWT_SECRET_ARN__" }
+      ],
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-group": "/ecs/modern-rest-service",
+          "awslogs-region": "ap-northeast-1",
+          "awslogs-stream-prefix": "ecs"
+        }
+      }
+    }
+  ]
+}

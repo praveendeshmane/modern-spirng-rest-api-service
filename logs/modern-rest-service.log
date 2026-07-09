@@ -1,0 +1,186 @@
+2026-02-14 12:52:14.243 [background-preinit] INFO  [na] o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2026-02-14 12:52:14.393 [main] INFO  [na] c.e.m.i.UserControllerIntegrationTest - Starting UserControllerIntegrationTest using Java 21.0.6 with PID 30564 (started by ift.praveen in D:\SPRING BOOT\modern-rest-service)
+2026-02-14 12:52:14.394 [main] DEBUG [na] c.e.m.i.UserControllerIntegrationTest - Running with Spring Boot v3.3.1, Spring v6.1.10
+2026-02-14 12:52:14.396 [main] INFO  [na] c.e.m.i.UserControllerIntegrationTest - No active profile set, falling back to 1 default profile: "default"
+2026-02-14 12:52:18.145 [main] INFO  [na] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-14 12:52:18.316 [main] INFO  [na] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 147 ms. Found 1 JPA repository interface.
+2026-02-14 12:52:21.335 [main] INFO  [na] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-02-14 12:52:21.831 [main] INFO  [na] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@6a261998
+2026-02-14 12:52:21.837 [main] INFO  [na] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-02-14 12:52:22.404 [main] INFO  [na] liquibase.database - Set default schema name to public
+2026-02-14 12:52:23.525 [main] INFO  [na] liquibase.changelog - Creating database history table with name: public.databasechangelog
+2026-02-14 12:52:23.654 [main] INFO  [na] liquibase.changelog - Reading from public.databasechangelog
+2026-02-14 12:52:23.914 [main] INFO  [na] liquibase.lockservice - Successfully acquired change log lock
+2026-02-14 12:52:23.920 [main] INFO  [na] liquibase.command - Using deploymentId: 1041143919
+2026-02-14 12:52:23.928 [main] INFO  [na] liquibase.changelog - Reading from public.databasechangelog
+2026-02-14 12:52:23.992 [main] INFO  [na] liquibase.ui - Running Changeset: db/changelog/db.changelog-master.xml::001-create-users-table::developer
+2026-02-14 12:52:24.020 [main] INFO  [na] liquibase.changelog - Table users created
+2026-02-14 12:52:24.024 [main] INFO  [na] liquibase.changelog - ChangeSet db/changelog/db.changelog-master.xml::001-create-users-table::developer ran successfully in 27ms
+2026-02-14 12:52:24.046 [main] INFO  [na] liquibase.ui - Running Changeset: db/changelog/db.changelog-master.xml::002-create-orders-table::developer
+2026-02-14 12:52:24.062 [main] INFO  [na] liquibase.changelog - Table orders created
+2026-02-14 12:52:24.070 [main] INFO  [na] liquibase.changelog - Foreign key constraint added to orders (user_id)
+2026-02-14 12:52:24.072 [main] INFO  [na] liquibase.changelog - ChangeSet db/changelog/db.changelog-master.xml::002-create-orders-table::developer ran successfully in 24ms
+2026-02-14 12:52:24.092 [main] INFO  [na] liquibase.util - UPDATE SUMMARY
+2026-02-14 12:52:24.093 [main] INFO  [na] liquibase.util - Run:                          2
+2026-02-14 12:52:24.093 [main] INFO  [na] liquibase.util - Previously run:               0
+2026-02-14 12:52:24.093 [main] INFO  [na] liquibase.util - Filtered out:                 0
+2026-02-14 12:52:24.094 [main] INFO  [na] liquibase.util - -------------------------------
+2026-02-14 12:52:24.095 [main] INFO  [na] liquibase.util - Total change sets:            2
+2026-02-14 12:52:24.097 [main] INFO  [na] liquibase.util - Update summary generated
+2026-02-14 12:52:24.103 [main] INFO  [na] liquibase.command - Update command completed successfully.
+2026-02-14 12:52:24.104 [main] INFO  [na] liquibase.ui - Liquibase: Update has been successful. Rows affected: 2
+2026-02-14 12:52:24.113 [main] INFO  [na] liquibase.lockservice - Successfully released change log lock
+2026-02-14 12:52:24.118 [main] INFO  [na] liquibase.command - Command execution complete
+2026-02-14 12:52:24.483 [main] INFO  [na] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-02-14 12:52:24.683 [main] INFO  [na] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
+2026-02-14 12:52:24.790 [main] INFO  [na] o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-02-14 12:52:25.914 [main] INFO  [na] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-02-14 12:52:29.032 [main] INFO  [na] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-02-14 12:52:29.138 [main] INFO  [na] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-02-14 12:52:30.043 [main] INFO  [na] o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2026-02-14 12:52:30.046 [main] WARN  [na] o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2026-02-14 12:52:32.330 [main] INFO  [na] o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-02-14 12:52:34.463 [main] WARN  [na] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-02-14 12:52:35.325 [main] INFO  [na] o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page template: index
+2026-02-14 12:52:36.445 [main] INFO  [na] o.s.b.a.e.web.EndpointLinksResolver - Exposing 3 endpoints beneath base path '/actuator'
+2026-02-14 12:52:38.882 [main] DEBUG [na] c.e.m.auth.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2026-02-14 12:52:38.882 [main] DEBUG [na] c.e.m.config.CorrelationIdFilter - Filter 'correlationIdFilter' configured for use
+2026-02-14 12:52:38.884 [main] INFO  [na] o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-02-14 12:52:38.884 [main] INFO  [na] o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2026-02-14 12:52:38.887 [main] INFO  [na] o.s.t.w.s.TestDispatcherServlet - Completed initialization in 2 ms
+2026-02-14 12:52:39.109 [main] INFO  [na] c.e.m.i.UserControllerIntegrationTest - Started UserControllerIntegrationTest in 26.062 seconds (process running for 35.967)
+2026-02-14 12:52:39.124 [scheduling-1] DEBUG [na] c.e.m.config.MaintenanceScheduler - Scheduled cleanup tick at 2026-02-14T03:52:39.124035200Z
+2026-02-14 12:52:43.396 [task-1] INFO  [na] c.e.m.e.UserChangedEventListener - User event action=CREATED userId=d5957e9c-e12b-4da3-ac33-aaea2832c545 username=dupuser
+2026-02-14 12:52:43.833 [task-2] INFO  [na] c.e.m.e.UserChangedEventListener - User event action=CREATED userId=8c4fdbfd-dbad-4c4d-b904-8d87dd5d7273 username=linkuser
+2026-02-14 12:52:45.056 [task-3] INFO  [na] c.e.m.e.UserChangedEventListener - User event action=CREATED userId=5d89937b-0190-4c5f-ac2f-d9c33d10c676 username=testuser
+2026-02-14 12:52:45.689 [main] INFO  [na] o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.example.modernrest.integration.UserCrudSystemTest]: UserCrudSystemTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-02-14 12:52:45.700 [main] INFO  [na] o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.example.modernrest.ModernRestServiceApplication for test class com.example.modernrest.integration.UserCrudSystemTest
+2026-02-14 12:52:45.707 [main] INFO  [na] tc.postgres:15 - Creating container for image: postgres:15
+2026-02-14 12:52:45.772 [main] INFO  [na] tc.postgres:15 - Container postgres:15 is starting: aa529970352ef975d6d582ab3c92ee0d88b912416af9e190dab2425ae563c6fc
+2026-02-14 12:52:47.023 [main] INFO  [na] tc.postgres:15 - Container postgres:15 started in PT1.3154544S
+2026-02-14 12:52:47.024 [main] INFO  [na] tc.postgres:15 - Container is started (JDBC URL: jdbc:postgresql://localhost:32812/testdb?loggerLevel=OFF)
+2026-02-14 12:52:47.036 [main] INFO  [na] o.s.b.d.r.RestartApplicationListener - Restart disabled due to context in which it is running
+2026-02-14 12:52:47.107 [main] INFO  [na] c.e.m.integration.UserCrudSystemTest - Starting UserCrudSystemTest using Java 21.0.6 with PID 30564 (started by ift.praveen in D:\SPRING BOOT\modern-rest-service)
+2026-02-14 12:52:47.108 [main] DEBUG [na] c.e.m.integration.UserCrudSystemTest - Running with Spring Boot v3.3.1, Spring v6.1.10
+2026-02-14 12:52:47.110 [main] INFO  [na] c.e.m.integration.UserCrudSystemTest - No active profile set, falling back to 1 default profile: "default"
+2026-02-14 12:52:48.010 [main] INFO  [na] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-14 12:52:48.046 [main] INFO  [na] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 34 ms. Found 1 JPA repository interface.
+2026-02-14 12:52:48.408 [main] INFO  [na] com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Starting...
+2026-02-14 12:52:48.450 [main] INFO  [na] com.zaxxer.hikari.pool.HikariPool - HikariPool-2 - Added connection org.postgresql.jdbc.PgConnection@18c35c73
+2026-02-14 12:52:48.450 [main] INFO  [na] com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Start completed.
+2026-02-14 12:52:48.466 [main] INFO  [na] liquibase.database - Set default schema name to public
+2026-02-14 12:52:48.559 [main] INFO  [na] liquibase.changelog - Creating database history table with name: public.databasechangelog
+2026-02-14 12:52:48.573 [main] INFO  [na] liquibase.changelog - Reading from public.databasechangelog
+2026-02-14 12:52:48.657 [main] INFO  [na] liquibase.lockservice - Successfully acquired change log lock
+2026-02-14 12:52:48.659 [main] INFO  [na] liquibase.command - Using deploymentId: 1041168659
+2026-02-14 12:52:48.662 [main] INFO  [na] liquibase.changelog - Reading from public.databasechangelog
+2026-02-14 12:52:48.687 [main] INFO  [na] liquibase.ui - Running Changeset: db/changelog/db.changelog-master.xml::001-create-users-table::developer
+2026-02-14 12:52:48.702 [main] INFO  [na] liquibase.changelog - Table users created
+2026-02-14 12:52:48.704 [main] INFO  [na] liquibase.changelog - ChangeSet db/changelog/db.changelog-master.xml::001-create-users-table::developer ran successfully in 16ms
+2026-02-14 12:52:48.715 [main] INFO  [na] liquibase.ui - Running Changeset: db/changelog/db.changelog-master.xml::002-create-orders-table::developer
+2026-02-14 12:52:48.726 [main] INFO  [na] liquibase.changelog - Table orders created
+2026-02-14 12:52:48.730 [main] INFO  [na] liquibase.changelog - Foreign key constraint added to orders (user_id)
+2026-02-14 12:52:48.732 [main] INFO  [na] liquibase.changelog - ChangeSet db/changelog/db.changelog-master.xml::002-create-orders-table::developer ran successfully in 16ms
+2026-02-14 12:52:48.739 [main] INFO  [na] liquibase.util - UPDATE SUMMARY
+2026-02-14 12:52:48.739 [main] INFO  [na] liquibase.util - Run:                          2
+2026-02-14 12:52:48.739 [main] INFO  [na] liquibase.util - Previously run:               0
+2026-02-14 12:52:48.739 [main] INFO  [na] liquibase.util - Filtered out:                 0
+2026-02-14 12:52:48.739 [main] INFO  [na] liquibase.util - -------------------------------
+2026-02-14 12:52:48.739 [main] INFO  [na] liquibase.util - Total change sets:            2
+2026-02-14 12:52:48.740 [main] INFO  [na] liquibase.util - Update summary generated
+2026-02-14 12:52:48.742 [main] INFO  [na] liquibase.command - Update command completed successfully.
+2026-02-14 12:52:48.743 [main] INFO  [na] liquibase.ui - Liquibase: Update has been successful. Rows affected: 2
+2026-02-14 12:52:48.752 [main] INFO  [na] liquibase.lockservice - Successfully released change log lock
+2026-02-14 12:52:48.755 [main] INFO  [na] liquibase.command - Command execution complete
+2026-02-14 12:52:48.822 [main] INFO  [na] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-02-14 12:52:48.831 [main] INFO  [na] o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-02-14 12:52:48.881 [main] INFO  [na] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-02-14 12:52:49.110 [main] INFO  [na] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-02-14 12:52:49.133 [main] INFO  [na] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-02-14 12:52:49.525 [main] INFO  [na] o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2026-02-14 12:52:49.527 [main] WARN  [na] o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2026-02-14 12:52:50.074 [main] WARN  [na] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-02-14 12:52:50.267 [main] INFO  [na] o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page template: index
+2026-02-14 12:52:50.579 [main] INFO  [na] o.s.b.a.e.web.EndpointLinksResolver - Exposing 3 endpoints beneath base path '/actuator'
+2026-02-14 12:52:51.569 [main] DEBUG [na] c.e.m.auth.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2026-02-14 12:52:51.570 [main] DEBUG [na] c.e.m.config.CorrelationIdFilter - Filter 'correlationIdFilter' configured for use
+2026-02-14 12:52:51.570 [main] INFO  [na] o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-02-14 12:52:51.571 [main] INFO  [na] o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2026-02-14 12:52:51.574 [main] INFO  [na] o.s.t.w.s.TestDispatcherServlet - Completed initialization in 1 ms
+2026-02-14 12:52:51.643 [scheduling-1] DEBUG [na] c.e.m.config.MaintenanceScheduler - Scheduled cleanup tick at 2026-02-14T03:52:51.643697200Z
+2026-02-14 12:52:51.644 [main] INFO  [na] c.e.m.integration.UserCrudSystemTest - Started UserCrudSystemTest in 4.608 seconds (process running for 48.502)
+2026-02-14 12:52:52.250 [task-1] INFO  [na] c.e.m.e.UserChangedEventListener - User event action=CREATED userId=afd37853-c1ff-4b61-a919-808331533dab username=systemuser
+2026-02-14 12:52:52.378 [task-2] INFO  [na] c.e.m.e.UserChangedEventListener - User event action=UPDATED userId=afd37853-c1ff-4b61-a919-808331533dab username=systemuser
+2026-02-14 12:52:52.444 [task-3] INFO  [na] c.e.m.e.UserChangedEventListener - User event action=DELETED userId=afd37853-c1ff-4b61-a919-808331533dab username=systemuser
+2026-02-14 12:52:53.040 [main] INFO  [na] o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.example.modernrest.repository.UserRepositoryDataJpaTest]: UserRepositoryDataJpaTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-02-14 12:52:53.092 [main] INFO  [na] o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.example.modernrest.ModernRestServiceApplication for test class com.example.modernrest.repository.UserRepositoryDataJpaTest
+2026-02-14 12:52:53.095 [main] INFO  [na] tc.postgres:15 - Creating container for image: postgres:15
+2026-02-14 12:52:53.144 [main] INFO  [na] tc.postgres:15 - Container postgres:15 is starting: 90ff163e8bcaf3fe900db9a3abf2185f58ec7631e0ba5470233180620f3132c2
+2026-02-14 12:52:54.304 [main] INFO  [na] tc.postgres:15 - Container postgres:15 started in PT1.2091531S
+2026-02-14 12:52:54.304 [main] INFO  [na] tc.postgres:15 - Container is started (JDBC URL: jdbc:postgresql://localhost:32813/testdb?loggerLevel=OFF)
+2026-02-14 12:52:54.309 [main] INFO  [na] o.s.b.d.r.RestartApplicationListener - Restart disabled due to context in which it is running
+2026-02-14 12:52:54.359 [main] INFO  [na] c.e.m.r.UserRepositoryDataJpaTest - Starting UserRepositoryDataJpaTest using Java 21.0.6 with PID 30564 (started by ift.praveen in D:\SPRING BOOT\modern-rest-service)
+2026-02-14 12:52:54.359 [main] DEBUG [na] c.e.m.r.UserRepositoryDataJpaTest - Running with Spring Boot v3.3.1, Spring v6.1.10
+2026-02-14 12:52:54.360 [main] INFO  [na] c.e.m.r.UserRepositoryDataJpaTest - No active profile set, falling back to 1 default profile: "default"
+2026-02-14 12:52:54.576 [main] INFO  [na] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-14 12:52:54.596 [main] INFO  [na] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 19 ms. Found 1 JPA repository interface.
+2026-02-14 12:52:54.692 [main] INFO  [na] com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Starting...
+2026-02-14 12:52:54.723 [main] INFO  [na] com.zaxxer.hikari.pool.HikariPool - HikariPool-3 - Added connection org.postgresql.jdbc.PgConnection@2fb425f4
+2026-02-14 12:52:54.724 [main] INFO  [na] com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Start completed.
+2026-02-14 12:52:54.741 [main] INFO  [na] liquibase.database - Set default schema name to public
+2026-02-14 12:52:54.834 [main] INFO  [na] liquibase.changelog - Creating database history table with name: public.databasechangelog
+2026-02-14 12:52:54.847 [main] INFO  [na] liquibase.changelog - Reading from public.databasechangelog
+2026-02-14 12:52:54.913 [main] INFO  [na] liquibase.lockservice - Successfully acquired change log lock
+2026-02-14 12:52:54.915 [main] INFO  [na] liquibase.command - Using deploymentId: 1041174914
+2026-02-14 12:52:54.917 [main] INFO  [na] liquibase.changelog - Reading from public.databasechangelog
+2026-02-14 12:52:54.937 [main] INFO  [na] liquibase.ui - Running Changeset: db/changelog/db.changelog-master.xml::001-create-users-table::developer
+2026-02-14 12:52:54.949 [main] INFO  [na] liquibase.changelog - Table users created
+2026-02-14 12:52:54.951 [main] INFO  [na] liquibase.changelog - ChangeSet db/changelog/db.changelog-master.xml::001-create-users-table::developer ran successfully in 13ms
+2026-02-14 12:52:54.961 [main] INFO  [na] liquibase.ui - Running Changeset: db/changelog/db.changelog-master.xml::002-create-orders-table::developer
+2026-02-14 12:52:54.970 [main] INFO  [na] liquibase.changelog - Table orders created
+2026-02-14 12:52:54.973 [main] INFO  [na] liquibase.changelog - Foreign key constraint added to orders (user_id)
+2026-02-14 12:52:54.974 [main] INFO  [na] liquibase.changelog - ChangeSet db/changelog/db.changelog-master.xml::002-create-orders-table::developer ran successfully in 13ms
+2026-02-14 12:52:54.980 [main] INFO  [na] liquibase.util - UPDATE SUMMARY
+2026-02-14 12:52:54.980 [main] INFO  [na] liquibase.util - Run:                          2
+2026-02-14 12:52:54.981 [main] INFO  [na] liquibase.util - Previously run:               0
+2026-02-14 12:52:54.981 [main] INFO  [na] liquibase.util - Filtered out:                 0
+2026-02-14 12:52:54.981 [main] INFO  [na] liquibase.util - -------------------------------
+2026-02-14 12:52:54.981 [main] INFO  [na] liquibase.util - Total change sets:            2
+2026-02-14 12:52:54.982 [main] INFO  [na] liquibase.util - Update summary generated
+2026-02-14 12:52:54.983 [main] INFO  [na] liquibase.command - Update command completed successfully.
+2026-02-14 12:52:54.983 [main] INFO  [na] liquibase.ui - Liquibase: Update has been successful. Rows affected: 2
+2026-02-14 12:52:54.990 [main] INFO  [na] liquibase.lockservice - Successfully released change log lock
+2026-02-14 12:52:54.992 [main] INFO  [na] liquibase.command - Command execution complete
+2026-02-14 12:52:55.043 [main] INFO  [na] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-02-14 12:52:55.047 [main] INFO  [na] o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-02-14 12:52:55.071 [main] INFO  [na] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-02-14 12:52:55.243 [main] INFO  [na] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-02-14 12:52:55.262 [main] INFO  [na] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-02-14 12:52:55.405 [main] INFO  [na] c.e.m.r.UserRepositoryDataJpaTest - Started UserRepositoryDataJpaTest in 1.096 seconds (process running for 52.264)
+2026-02-14 12:52:56.819 [main] INFO  [na] o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.example.modernrest.web.UserControllerWebMvcTest]: UserControllerWebMvcTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-02-14 12:52:56.857 [main] INFO  [na] o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.example.modernrest.ModernRestServiceApplication for test class com.example.modernrest.web.UserControllerWebMvcTest
+2026-02-14 12:52:56.865 [main] INFO  [na] o.s.b.d.r.RestartApplicationListener - Restart disabled due to context in which it is running
+2026-02-14 12:52:56.923 [main] INFO  [na] c.e.m.web.UserControllerWebMvcTest - Starting UserControllerWebMvcTest using Java 21.0.6 with PID 30564 (started by ift.praveen in D:\SPRING BOOT\modern-rest-service)
+2026-02-14 12:52:56.923 [main] DEBUG [na] c.e.m.web.UserControllerWebMvcTest - Running with Spring Boot v3.3.1, Spring v6.1.10
+2026-02-14 12:52:56.923 [main] INFO  [na] c.e.m.web.UserControllerWebMvcTest - No active profile set, falling back to 1 default profile: "default"
+2026-02-14 12:53:02.968 [main] INFO  [na] o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page template: index
+2026-02-14 12:53:03.663 [main] WARN  [na] o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 5ed2efbf-6dfd-4ba2-becb-a4b82fb397b2
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-02-14 12:53:03.680 [main] INFO  [na] o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-02-14 12:53:04.297 [main] INFO  [na] o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-02-14 12:53:04.297 [main] INFO  [na] o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2026-02-14 12:53:04.299 [main] INFO  [na] o.s.t.w.s.TestDispatcherServlet - Completed initialization in 2 ms
+2026-02-14 12:53:04.400 [main] INFO  [na] c.e.m.web.UserControllerWebMvcTest - Started UserControllerWebMvcTest in 7.536 seconds (process running for 61.259)
+2026-02-14 12:53:04.891 [SpringApplicationShutdownHook] INFO  [na] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-02-14 12:53:04.901 [SpringApplicationShutdownHook] INFO  [na] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-02-14 12:53:04.933 [SpringApplicationShutdownHook] INFO  [na] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-02-14 12:53:04.960 [SpringApplicationShutdownHook] INFO  [na] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-02-14 12:53:04.962 [SpringApplicationShutdownHook] INFO  [na] com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown initiated...
+2026-02-14 12:53:04.979 [SpringApplicationShutdownHook] INFO  [na] com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown completed.
+2026-02-14 12:53:04.981 [SpringApplicationShutdownHook] INFO  [na] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-02-14 12:53:04.982 [SpringApplicationShutdownHook] INFO  [na] com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Shutdown initiated...
+2026-02-14 12:53:04.996 [SpringApplicationShutdownHook] INFO  [na] com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Shutdown completed.

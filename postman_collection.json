@@ -1,0 +1,209 @@
+{
+  "info": {
+    "name": "Modern REST Service - UAT Collection",
+    "_postman_id": "7a4e9fab-f332-4da5-bf10-d0a665f033f1",
+    "description": "Collection for smoke/UAT of modern-rest-service including auth, users, files, ops, and platform audit checks.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Health",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{baseUrl}}/actuator/health"
+      }
+    },
+    {
+      "name": "Auth - Admin Login",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"username\": \"{{adminUsername}}\",\n  \"password\": \"{{adminPassword}}\"\n}"
+        },
+        "url": "{{baseUrl}}/api/v1/auth/login"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test('Login success', function () { pm.response.to.have.status(200); });",
+              "var jsonData = pm.response.json();",
+              "pm.collectionVariables.set('adminToken', jsonData.token);"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Auth - User Login",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"username\": \"{{userUsername}}\",\n  \"password\": \"{{userPassword}}\"\n}"
+        },
+        "url": "{{baseUrl}}/api/v1/auth/login"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test('Login success', function () { pm.response.to.have.status(200); });",
+              "var jsonData = pm.response.json();",
+              "pm.collectionVariables.set('userToken', jsonData.token);"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Users - Create",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Authorization", "value": "Bearer {{adminToken}}" },
+          { "key": "Content-Type", "value": "application/json" },
+          { "key": "X-Correlation-Id", "value": "uat-corr-123" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"username\": \"{{testUsername}}\",\n  \"email\": \"{{testEmail}}\",\n  \"first_name\": \"UAT\",\n  \"last_name\": \"User\"\n}"
+        },
+        "url": "{{baseUrl}}/api/v1/users"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test('Created', function () { pm.response.to.have.status(201); });",
+              "var jsonData = pm.response.json();",
+              "pm.collectionVariables.set('createdUserId', jsonData.id);"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Users - Get By Id",
+      "request": {
+        "method": "GET",
+        "header": [
+          { "key": "Authorization", "value": "Bearer {{adminToken}}" }
+        ],
+        "url": "{{baseUrl}}/api/v1/users/{{createdUserId}}"
+      }
+    },
+    {
+      "name": "Users - List",
+      "request": {
+        "method": "GET",
+        "header": [
+          { "key": "Authorization", "value": "Bearer {{adminToken}}" }
+        ],
+        "url": "{{baseUrl}}/api/v1/users?page=0&size=10"
+      }
+    },
+    {
+      "name": "Users - Update",
+      "request": {
+        "method": "PUT",
+        "header": [
+          { "key": "Authorization", "value": "Bearer {{adminToken}}" },
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"email\": \"{{updatedEmail}}\",\n  \"first_name\": \"Updated\",\n  \"status\": \"INACTIVE\"\n}"
+        },
+        "url": "{{baseUrl}}/api/v1/users/{{createdUserId}}"
+      }
+    },
+    {
+      "name": "Users - USER cannot create (403)",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Authorization", "value": "Bearer {{userToken}}" },
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"username\": \"user_forbidden\",\n  \"email\": \"forbidden@example.com\",\n  \"first_name\": \"No\",\n  \"last_name\": \"Access\"\n}"
+        },
+        "url": "{{baseUrl}}/api/v1/users"
+      }
+    },
+    {
+      "name": "Ops - Async Report",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Authorization", "value": "Bearer {{adminToken}}" }
+        ],
+        "url": "{{baseUrl}}/api/v1/ops/reports/users"
+      }
+    },
+    {
+      "name": "Ops - Publish Message",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Authorization", "value": "Bearer {{adminToken}}" },
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"message\": \"uat ping\"\n}"
+        },
+        "url": "{{baseUrl}}/api/v1/ops/messages"
+      }
+    },
+    {
+      "name": "Platform - Audit Trail (ADMIN)",
+      "request": {
+        "method": "GET",
+        "header": [
+          { "key": "Authorization", "value": "Bearer {{adminToken}}" }
+        ],
+        "url": "{{baseUrl}}/api/v1/platform/audit-trail"
+      }
+    },
+    {
+      "name": "Users - Delete",
+      "request": {
+        "method": "DELETE",
+        "header": [
+          { "key": "Authorization", "value": "Bearer {{adminToken}}" }
+        ],
+        "url": "{{baseUrl}}/api/v1/users/{{createdUserId}}"
+      }
+    }
+  ],
+  "variable": [
+    { "key": "baseUrl", "value": "http://localhost:8080" },
+    { "key": "adminUsername", "value": "admin" },
+    { "key": "adminPassword", "value": "admin123" },
+    { "key": "userUsername", "value": "user" },
+    { "key": "userPassword", "value": "user123" },
+    { "key": "adminToken", "value": "" },
+    { "key": "userToken", "value": "" },
+    { "key": "createdUserId", "value": "" },
+    { "key": "testUsername", "value": "uat_user_1" },
+    { "key": "testEmail", "value": "uat1@example.com" },
+    { "key": "updatedEmail", "value": "uat1.updated@example.com" }
+  ]
+}

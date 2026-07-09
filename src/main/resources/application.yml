@@ -1,0 +1,43 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: modern-rest-service
+  datasource:
+    url: jdbc:postgresql://localhost:55432/moderndb
+    username: ${DB_USERNAME:postgres}
+    password: ${DB_PASSWORD:password}
+  jpa:
+    hibernate:
+      ddl-auto: validate
+  liquibase:
+    change-log: classpath:db/changelog/db.changelog-master.xml
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics,prometheus
+  endpoint:
+    health:
+      show-details: always
+
+logging:
+  level:
+    root: INFO
+    com.example.modernrest: DEBUG
+
+app:
+  jwt:
+    secret: ${APP_JWT_SECRET:bW9kZXJuLXJlc3Qtc2VydmljZS1kZW1vLXNlY3JldC1rZXktbW9kZXJuLXJlc3Qtc2VydmljZS1kZW1v}
+    expiration-ms: 3600000
+  scheduler:
+    cleanup-delay-ms: 300000
+  files:
+    upload-dir: uploads
+  messaging:
+    exchange: modern.exchange
+    routing-key: modern.key
+  audit:
+    enabled: true
+    max-entries: 200
